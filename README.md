@@ -371,3 +371,4 @@ This template uses [Remix](https://remix.run). The following Shopify tools are a
 - [Getting started with internationalizing your app](https://shopify.dev/docs/apps/best-practices/internationalization/getting-started)
 # Inventary_sync
 # Inventary_sync
+# Inventary_sync
