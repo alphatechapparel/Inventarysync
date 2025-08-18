@@ -1,0 +1,41 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "44707bd2fc813a35c1dbeb597d812fff"
+name = "Quantity"
+handle = "quantity-8"
+application_url = "https://chinese-nelson-nights-calendar.trycloudflare.com"
+embedded = true
+
+[build]
+auto_update_urls = false 
+include_config_on_deploy = true
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2025-07"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+  [[webhooks.targets]]
+address = "https://fairy-nam-hawaiian-horizontal.trycloudflare.com/api/orders"   
+topic = "orders/create"
+
+[[webhooks.targets]]
+address = "https://fairy-nam-hawaiian-horizontal.trycloudflare.com/api/cancelled"
+topic = "orders/cancelled"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = ["https://chinese-nelson-nights-calendar.trycloudflare.com/auth/callback", "https://chinese-nelson-nights-calendar.trycloudflare.com/auth/shopify/callback", "https://chinese-nelson-nights-calendar.trycloudflare.com/api/auth/callback"]
+
+[pos]
+embedded = false
