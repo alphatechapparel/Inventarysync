@@ -37,22 +37,27 @@ export const action = async ({ request }) => {
         continue;
       }
 
-      // Fetch product details to check for "base layer" tag
-      const productResponse = await axios.get(`${shopifyBaseURL}/products.json`, {
-        headers: {
-          'X-Shopify-Access-Token': process.env.SHOPIFY_ACCESS_TOKEN,
-          'Content-Type': 'application/json'
-        }
-      });
-
-      const productWithTag = productResponse.data.products.find(product => {
-        return product.variants.some(variant => variant.sku === originalSKU) && product.tags.includes('base layer');
-      });
-
-      if (productWithTag) {
-        console.warn(`SKU ${originalSKU} does  have "base layer" tag. Skipping inventory adjustment.`);
+      if (originalSKU?.endsWith('DNS')) {
+        console.warn(`SKU ${originalSKU} has "DNS" tag. Skipping inventory adjustment.`);
         continue;
       }
+
+      // Fetch product details to check for "base layer" tag
+      // const productResponse = await axios.get(`${shopifyBaseURL}/products.json`, {
+      //   headers: {
+      //     'X-Shopify-Access-Token': process.env.SHOPIFY_ACCESS_TOKEN,
+      //     'Content-Type': 'application/json'
+      //   }
+      // });
+
+      // const productWithTag = productResponse.data.products.find(product => {
+      //   return product.variants.some(variant => variant.sku === originalSKU) && product.tags.includes('DNS');
+      // });
+
+      // if (productWithTag) {
+      //   console.warn(`SKU ${originalSKU} does  have "base layer" tag. Skipping inventory adjustment.`);
+      //   continue;
+      // }
 
       // Transform SKU to opposite gender
       let transformedSKU;
