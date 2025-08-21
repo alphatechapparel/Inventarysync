@@ -31,6 +31,11 @@ export const action = async ({ request }) => {
         continue;
       }
 
+      if (originalSKU?.endsWith('DNS')) {
+        console.warn(`SKU ${originalSKU} has "DNS" tag. Skipping inventory adjustment.`);
+        continue;
+      }
+
       // Transform SKU to find the corresponding transgender variant
       let transformedSKU;
       try {
