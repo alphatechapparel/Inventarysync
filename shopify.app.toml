@@ -3,7 +3,7 @@
 client_id = "44707bd2fc813a35c1dbeb597d812fff"
 name = "Quantity"
 handle = "quantity-8"
-application_url = "https://tale-ted-object-melissa.trycloudflare.com"
+application_url = "https://tale-convicted-done-winning.trycloudflare.com"
 embedded = true
 
 [build]
@@ -35,7 +35,7 @@ topic = "orders/cancelled"
 scopes = "write_products"
 
 [auth]
-redirect_urls = ["https://tale-ted-object-melissa.trycloudflare.com/auth/callback", "https://tale-ted-object-melissa.trycloudflare.com/auth/shopify/callback", "https://tale-ted-object-melissa.trycloudflare.com/api/auth/callback"]
+redirect_urls = ["https://tale-convicted-done-winning.trycloudflare.com/auth/callback", "https://tale-convicted-done-winning.trycloudflare.com/auth/shopify/callback", "https://tale-convicted-done-winning.trycloudflare.com/api/auth/callback"]
 
 [pos]
 embedded = false
