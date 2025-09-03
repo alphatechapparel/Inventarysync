@@ -2,7 +2,7 @@
 import axios from 'axios';
 import { getInventoryItemId } from './shopifyUtils';
 
-const shopifyBaseURL = `https://${process.env.SHOPIFY_STORE}.myshopify.com/admin/api/2023-04`;
+const shopifyBaseURL = `https://${process.env.SHOPIFY_STORE}.com/admin/api/2023-04`;
 
 async function setInventoryAvailable(sku, locationId, availableQuantity) {
   try {
