@@ -32,7 +32,7 @@ topic = "orders/cancelled"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_products"
+scopes = "write_products ,read_orders,write_orders,read_products"
 
 [auth]
 redirect_urls = ["https://britannica-obj-qualifications-andrew.trycloudflare.com/auth/callback", "https://britannica-obj-qualifications-andrew.trycloudflare.com/auth/shopify/callback", "https://britannica-obj-qualifications-andrew.trycloudflare.com/api/auth/callback"]
