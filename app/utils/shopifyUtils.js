@@ -49,8 +49,10 @@ export async function getInventoryItemId(sku) {
                 if (productVariantsFoundApiResult.data.productVariants.nodes.length > 0) {
                     
                     const inventoryItemId = productVariantsFoundApiResult.data.productVariants.nodes[0].inventoryItem.id;
+                
+                 const inventoryItemIdnumber = inventoryItemId.split('/').pop();
                     console.log("data   found for this variant",inventoryItemId);
-                return inventoryItemId;
+                return inventoryItemIdnumber;
                 } 
               }catch (err) {
     throw new Error('SKU');
