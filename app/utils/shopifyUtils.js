@@ -5,7 +5,7 @@ const shopifyBaseURL = `https://${process.env.SHOPIFY_STORE}.myshopify.com/admin
 
 export async function getInventoryItemId(sku) {
   try {
-    const response = await axios.get(`${shopifyBaseURL}/products.json`, {
+    const response = await axios.get(`${shopifyBaseURL}/products.json?limit=250`, {
       headers: {
         'X-Shopify-Access-Token': process.env.SHOPIFY_ACCESS_TOKEN,
         'Content-Type': 'application/json'
