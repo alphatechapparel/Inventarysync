@@ -4,7 +4,9 @@ import { getInventoryItemId } from '../utils/shopifyUtils';
 import setInventoryAvailable from '../utils/syncInventory';
 import { transformGenderSKU } from '../utils/transformSKU';
 
-const shopifyBaseURL = `https://alphatechapparel.myshopify.com/admin/api/2023-04`;
+const shopifyBaseURL = `https://${process.env.SHOPIFY_STORE}.com/admin/api/2023-04`;
+
+ 
 
 export const action = async ({ request }) => {
     console.log("Received webhook request:", request);
@@ -19,7 +21,7 @@ export const action = async ({ request }) => {
     // Get fulfillment orders to determine locations
     const foResponse = await axios.get(`${shopifyBaseURL}/orders/${order.id}/fulfillment_orders.json`, {
       headers: {
-        'X-Shopify-Access-Token': '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',
+        'X-Shopify-Access-Token': process.env.SHOPIFY_ACCESS_TOKEN,
         'Content-Type': 'application/json'
       }
     });
@@ -97,7 +99,7 @@ export const action = async ({ request }) => {
           location_ids: locationId
         },
         headers: {
-          'X-Shopify-Access-Token': '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',
+          'X-Shopify-Access-Token': process.env.SHOPIFY_ACCESS_TOKEN,
           'Content-Type': 'application/json'
         }
       });
