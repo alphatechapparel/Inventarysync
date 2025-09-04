@@ -2,7 +2,7 @@
 import axios from 'axios';
 import { getInventoryItemId } from './shopifyUtils';
 
-const shopifyBaseURL = `https://${process.env.SHOPIFY_STORE}.myshopify.com/admin/api/2023-04`;
+const shopifyBaseURL = `https://alphatechapparel.myshopify.com/admin/api/2023-04`;
 
 async function setInventoryAvailable(sku, locationId, availableQuantity) {
   try {
@@ -17,7 +17,7 @@ async function setInventoryAvailable(sku, locationId, availableQuantity) {
       relocate_if_necessary: true
     }, {
       headers: {
-        'X-Shopify-Access-Token': process.env.SHOPIFY_ACCESS_TOKEN,
+        'X-Shopify-Access-Token': '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',
         'Content-Type': 'application/json'
       }
     });
@@ -32,7 +32,7 @@ async function setInventoryAvailable(sku, locationId, availableQuantity) {
       available: availableQuantity
     }, {
       headers: {
-        'X-Shopify-Access-Token': process.env.SHOPIFY_ACCESS_TOKEN,
+        'X-Shopify-Access-Token': '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',
         'Content-Type': 'application/json'
       }
     });
