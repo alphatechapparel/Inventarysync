@@ -6,6 +6,14 @@ import { transformGenderSKU } from '../utils/transformSKU';
 
 const shopifyBaseURL = `https://${process.env.SHOPIFY_STORE}.com/admin/api/2023-04`;
 
+export const loader = async ({ request }) => {
+ 
+  return json(
+      { success: true, messa:"trueeee"},
+      { status: 200 }
+    );
+};
+
 export const action = async ({ request }) => {
     console.log("Received webhook request:", request);
   const order = await request.json();
