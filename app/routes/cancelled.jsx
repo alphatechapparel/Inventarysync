@@ -4,7 +4,7 @@ import { getInventoryItemId } from '../utils/shopifyUtils';
 import setInventoryAvailable from '../utils/syncInventory';
 import { transformGenderSKU } from '../utils/transformSKU';
 
-const shopifyBaseURL = `https://${process.env.SHOPIFY_STORE}.com/admin/api/2023-04`;
+const shopifyBaseURL = `https://${process.env.SHOPIFY_STORE}.myshopify.com/admin/api/2023-04`;
 
 export const action = async ({ request }) => {
   const order = await request.json();
